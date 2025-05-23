@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Main application colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Brand colors - easier to change for whitelabeling */
+    --primary: 262 83% 74%;  /* Purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 263 50% 54%; /* Darker purple */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Utility colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 83% 94%;  /* Light purple */
+    --accent-foreground: 263 50% 54%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Finance app specific colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --income: 143 71% 36%;
+    --income-foreground: 0 0% 100%;
+
+    --expense: 360 91% 69%;
+    --expense-foreground: 0 0% 100%;
+
+    /* Utility colors */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 74%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar styling */
+    --sidebar-background: 262 83% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 262 83% 74%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 83% 95%;
+    --sidebar-accent-foreground: 263 50% 54%;
+    --sidebar-border: 262 83% 90%;
+    --sidebar-ring: 262 83% 74%;
+  }
+
+  .dark {
+    /* Main application colors */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+
+    /* Brand colors */
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Utility colors */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Finance app specific colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --income: 143 71% 36%;
+    --income-foreground: 0 0% 100%;
+
+    --expense: 0 91% 69%;
+    --expense-foreground: 0 0% 100%;
+
+    /* Utility colors */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 263 70% 50%;
+
+    /* Sidebar styling */
+    --sidebar-background: 225 70% 6%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 25% 15%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 225 25% 15%;
+    --sidebar-ring: 263 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Adiciona estilos de hover dinâmicos baseados nas variáveis CSS */
+@layer utilities {
+  .bg-primary:hover,
+  .dark .bg-primary:hover {
+    background-color: hsl(var(--primary-hover)) !important;
+    color: hsl(var(--primary-hover-foreground)) !important;
+  }
+
+  .text-primary:hover,
+  .dark .text-primary:hover {
+    color: hsl(var(--primary-hover)) !important;
+  }
+
+  .border-primary:hover,
+  .dark .border-primary:hover {
+    border-color: hsl(var(--primary-hover)) !important;
+  }
+
+  /* Você pode adicionar regras semelhantes para --secondary-hover se desejar implementá-lo */
+}
